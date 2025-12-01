@@ -7,7 +7,7 @@ import Addblog from "./pages/admin/Addblog"
 import Listblog from "./pages/admin/Listblog"
 import Comment from "./pages/admin/Comment"
 import Login from "./components/admin/Login"
-
+import 'quill/dist/quill.snow.css'
 function App() {
   
 
@@ -20,7 +20,7 @@ function App() {
         <Route index element={<Dashboard/>}/>
         <Route path='addBlog' element={<Addblog/>}/>
          <Route path='listBlog' element={<Listblog/>}/>
-          <Route path='comments' element={<Comment/>}/>
+          <Route path='comment' element={<Comment/>}/>
         </Route>
       </Routes>
     </div>

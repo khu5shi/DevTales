@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { assets, dashboard_data } from '../../assets/assets'
+import Blogtableitem from '../../components/admin/Blogtableitem'
 
 const Dashboard = () => {
   const [dashboarddata,setDashboarddata]=useState({
@@ -44,12 +45,14 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-
+      {/* icon and text latest blog */}
       <div>
          <div className='flex items-center gap-3 m-4 mt-6 text-gray-600'>
           <img src={assets.dashboard_icon_4} alt="" />
           <p>Latest Blogs</p>
-          </div> 
+          </div>
+          
+           
            <div className='relative max-w-4xl overflow-x-auto shadow rounded-lg scrollbar-hide bg-white'>
             <table className='w-full tex-sm text-gray-500'>
               <thead className='text-xs textgray-600 text-left uppercase'>
@@ -62,7 +65,10 @@ const Dashboard = () => {
                    </tr>
               </thead>
               <tbody>
-                
+                {dashboarddata.recentBlogs.map((blog,index)=>{
+                  return <Blogtableitem key={blog._id} blog={blog}
+                  fetchBlogs={fetchDashboard} index={index+1}/>
+                })}
               </tbody>
             </table>
           </div>
