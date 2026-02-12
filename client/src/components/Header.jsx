@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import {useRef} from 'react'
 import { assets } from '../assets/assets'
 import { useAppContext } from '../context/AppContext'
 
@@ -11,8 +11,8 @@ const Header = () => {
     setInput(inputRef.current.value);
    }
    const onClear = () =>{
-    setInput("");
-    inputRef.current.value = "";
+    setInput('');
+    inputRef.current.value = '';
    }
 
   return (

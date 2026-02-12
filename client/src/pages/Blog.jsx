@@ -27,7 +27,7 @@ const Blog = () => {
 
    const fetchComments = async() =>{
      try {
-    const { data } = await axios.get(`/api/blog/comments/${id}`);
+    const { data } = await axios.post('/api/blog/comments',{blogId: id});
     if (data.success) {
       setComment(data.comment);
     } else {
@@ -41,11 +41,11 @@ const Blog = () => {
    const addComment = async (e)=>{
     e.preventDefault()
     try {
-      const {data} = await axios.post('/api/blog/comments',{blogId: id , name, content} );
+      const {data} = await axios.post('/api/blog/add-comment',{blog: id , name, content} );
       if(data.success){
        toast.success(data.message);
-        setName("");
-        setContent("");
+        setName('');
+        setContent('');
       }
       else {
         toast.error(data.message)

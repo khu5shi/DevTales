@@ -1,6 +1,5 @@
-import React from 'react'
+
 import { assets } from '../assets/assets'
-import { useNavigate } from 'react-router-dom'
 import { useAppContext } from '../context/AppContext'
 
 const Navbar = () => {
@@ -15,7 +14,7 @@ const Navbar = () => {
       src={assets.logo} alt="logo" className='w-32 sm:w-44' />
       <button  onClick={()=>navigate('/admin')} 
       className='flex items-center gap-2 rounded-full text-sm cursor-pointer bg-primary text-white px-10 py-2.5'>
-        {token ? "Dashboard" : "Login"}
+        {token ? 'Dashboard' : 'Login'}
         <img src={assets.arrow} alt="arrow" className='w-3' />
       </button>
     </div>

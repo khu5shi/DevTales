@@ -25,7 +25,6 @@ export const AppProvider = ({children})=>{
     }
 
 
-
     useEffect(()=>{
         fetchBlogs();
         const token = localStorage.getItem('token');
